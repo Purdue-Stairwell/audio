@@ -2,14 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StairWELL Audio</title>
   </head>
   <body>
     <div id="app">
       <h1 id="time"></h1>
-      <button id="play">play</button>
+      <button id="play">Toggle Golden Hour</button>
+      <progress id="loading" max="50" value="0"></progress>
+      <button id="dummy">send dummy signal</button>
     </div>
     <script type="module" src="/main.js"></script>
   </body>

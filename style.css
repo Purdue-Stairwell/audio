@@ -3,9 +3,10 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
-body {
+#app {
   height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
