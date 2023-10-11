@@ -1,4 +1,4 @@
-import './audio/style.css'
+import './style.css'
 import io from 'socket.io-client';
 import {Howl} from 'howler';
 
@@ -31,7 +31,7 @@ dummyButton.addEventListener("click", handleData);
 function loadFiles() {
   //load base
   base = new Howl({
-    src: ['/audio/sounds/base.mp3'],
+    src: ['/sounds/base.mp3'],
     autoplay: true,
     loop: true,
   });
@@ -40,45 +40,45 @@ function loadFiles() {
   //load spawn_pitches
   for(let i = 1; i <= 8; i++) {
     spawn_pitches.push(new Howl({
-      src: ['/audio/sounds/spawn_pitches/spawn_pitches_' + i + '.mp3']
+      src: ['/sounds/spawn_pitches/spawn_pitches_' + i + '.mp3']
     }));
   }
   progress.value +=10;   
 
   //load nonGoldenHourTracks
   nonGoldenHourTracks.push(new Howl({
-    src: ['/audio/sounds/cello.mp3']
+    src: ['/sounds/cello.mp3']
   }));
   nonGoldenHourTracks.push(new Howl({
-    src: ['/audio/sounds/glacier.mp3']
+    src: ['/sounds/glacier.mp3']
   }));
   nonGoldenHourTracks.push(new Howl({
-    src: ['/audio/sounds/plucks.mp3']
+    src: ['/sounds/plucks.mp3']
   }));
   progress.value +=10;
 
   //load goldenHourLoud tracks
   goldenHourLoud.push(new Howl({
-    src: ['/audio/sounds/barum.mp3'],
+    src: ['/sounds/barum.mp3'],
     loop: true,
   }));
   goldenHourLoud.push(new Howl({
-    src: ['/audio/sounds/cello.mp3'],
+    src: ['/sounds/cello.mp3'],
     loop: true,
   }));
   goldenHourLoud.push(new Howl({
-    src: ['/audio/sounds/glacier.mp3'],
+    src: ['/sounds/glacier.mp3'],
     loop: true,
   }));
   progress.value +=10;
 
   //load goldenHourQuiet tracks
   goldenHourQuiet.push(new Howl({
-    src: ['/audio/sounds/irack.mp3'],
+    src: ['/sounds/irack.mp3'],
     loop: true,
   }));
   goldenHourQuiet.push(new Howl({
-    src: ['/audio/sounds/plucks.mp3'],
+    src: ['/sounds/plucks.mp3'],
     loop: true,
   }));
   progress.value +=10;
