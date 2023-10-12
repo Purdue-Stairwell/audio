@@ -35,6 +35,7 @@ function loadFiles() {
     src: ['/sounds/base.mp3'],
     autoplay: true,
     loop: true,
+    volume: 0.8,
   });
   progress.value +=10;
 
@@ -48,13 +49,16 @@ function loadFiles() {
 
   //load nonGoldenHourTracks
   nonGoldenHourTracks.push(new Howl({
-    src: ['/sounds/cello.mp3']
+    src: ['/sounds/cello.mp3'],
+    volume: 0.8
   }));
   nonGoldenHourTracks.push(new Howl({
-    src: ['/sounds/glacier.mp3']
+    src: ['/sounds/glacier.mp3'],
+    volume: 0.8
   }));
   nonGoldenHourTracks.push(new Howl({
-    src: ['/sounds/plucks.mp3']
+    src: ['/sounds/plucks.mp3'],
+    volume: 0.8
   }));
   progress.value +=10;
 
@@ -137,6 +141,8 @@ function toggleMode(mode) {
   isgoldenHour = mode
   time.style.color = isgoldenHour ? "gold" : "black";
   if (isgoldenHour) {
+    //set base to 100% volume during goldenHour
+    base.volume = 1;
     for(let track of goldenHourLoud) {
       track.play();
       track.fade(0,1,3000);
@@ -146,6 +152,8 @@ function toggleMode(mode) {
       track.fade(0,1,3000);
     }
   } else {
+    //set base to 80% volume during nonGoldenHour
+    base.volume = 0.8;
     for(let track of goldenHourLoud) {
       track.fade(1,0,3000);
       track.on('fade', ()=> {
