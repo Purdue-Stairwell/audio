@@ -10,3 +10,13 @@
   align-items: center;
   flex-direction: column;
 }
+
+#data-container {
+  width: 50vw;
+  height: fit-content;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

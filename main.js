@@ -23,6 +23,7 @@ let playButton = document.getElementById("play");
 let dummyButton = document.getElementById("dummy");
 let time = document.getElementById("time");
 let progress = document.getElementById("loading");
+let dataContainer = document.getElementById("data-container");
 
 playButton.addEventListener("click", () => {toggleMode(!isgoldenHour)});  
 dummyButton.addEventListener("click", handleData);
@@ -90,12 +91,13 @@ function loadFiles() {
 }
 
 function timeLoop() {
-  const currentHour = new Date().getHours();
-  time.innerHTML = currentHour + " : " + new Date().getMinutes() + " : " + new Date().getSeconds();
+  let isSixPM = new Date().getHours() === 18 ? true : false;
+  let isSevenPM = new Date().getHours() === 19 ? true : false;
+  time.innerHTML = new Date().getHours() + " : " + new Date().getMinutes() + " : " + new Date().getSeconds();
   
-  if (currentHour === 18 && isgoldenHour == false) {
+  if (isSixPM) {
     toggleMode(true);
-  } else if (currentHour !== 18 && isgoldenHour == true) {
+  } else if (isSevenPM) {
     toggleMode(false);
   }
   setTimeout(timeLoop, 1000);
