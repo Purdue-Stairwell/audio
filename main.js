@@ -99,9 +99,9 @@ function timeLoop() {
   let isSevenPM = new Date().getHours() === 19 ? true : false;
   time.innerHTML = new Date().getHours() + " : " + new Date().getMinutes() + " : " + new Date().getSeconds();
   
-  if (isSixPM) {
+  if (isSixPM && !isgoldenHour) {
     toggleMode(true);
-  } else if (isSevenPM) {
+  } else if (isSevenPM && isgoldenHour) {
     toggleMode(false);
   }
   setTimeout(timeLoop, 1000);
@@ -135,7 +135,7 @@ function handleData() {
 
 /**
  * handles the entering and exiting logic of golden hour
- * @param {boolean} mode the vale to set isgoldenHour to 
+ * @param {boolean} mode the value to set isgoldenHour to 
  */
 function toggleMode(mode) {
   isgoldenHour = mode
