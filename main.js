@@ -139,7 +139,7 @@ function handleData() {
  */
 function toggleMode(mode) {
   isgoldenHour = mode
-  time.style.color = isgoldenHour ? "gold" : "black";
+  time.style.color = isgoldenHour ? "gold" : "white";
   if (isgoldenHour) {
     //set base to 100% volume during goldenHour
     base.volume = 1;
